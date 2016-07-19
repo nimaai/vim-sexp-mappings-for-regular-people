@@ -59,6 +59,8 @@ function! s:sexp_mappings() abort
   exe s:map('n', '<)', '<Plug>(sexp_emit_tail_element)')
   exe s:map('n', '<(', '<Plug>(sexp_capture_prev_element)')
   exe s:map('n', '>)', '<Plug>(sexp_capture_next_element)')
+  exe s:map('n', '<re', '<Plug>(sexp_raise_element)')
+  exe s:map('n', '<rf', '<Plug>(sexp_raise_list)')
 endfunction
 
 function! s:setup() abort
