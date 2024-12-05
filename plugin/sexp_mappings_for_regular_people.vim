@@ -32,41 +32,41 @@ function! s:sexp_mappings() abort
   exe s:map_sexp_wrap('e', 'cse{', '{', '}', 0)
   exe s:map_sexp_wrap('e', 'cse}', '{', '}', 1)
 
-  exe s:map('n', 'dsf', '<Plug>(sexp_splice_list)')
+  " exe s:map('n', 'dsf', '<Plug>(sexp_splice_list)')
 
-  if !get(g:, 'sexp_no_word_maps')
-    exe s:map('n', 'B', '<Plug>(sexp_move_to_prev_element_head)')
-    exe s:map('n', 'W', '<Plug>(sexp_move_to_next_element_head)')
-    exe s:map('n', 'gE', '<Plug>(sexp_move_to_prev_element_tail)')
-    exe s:map('n', 'E', '<Plug>(sexp_move_to_next_element_tail)')
-    exe s:map('x', 'B', '<Plug>(sexp_move_to_prev_element_head)')
-    exe s:map('x', 'W', '<Plug>(sexp_move_to_next_element_head)')
-    exe s:map('x', 'gE', '<Plug>(sexp_move_to_prev_element_tail)')
-    exe s:map('x', 'E', '<Plug>(sexp_move_to_next_element_tail)')
-    exe s:map('o', 'B', '<Plug>(sexp_move_to_prev_element_head)')
-    exe s:map('o', 'W', '<Plug>(sexp_move_to_next_element_head)')
-    exe s:map('o', 'gE', '<Plug>(sexp_move_to_prev_element_tail)')
-    exe s:map('o', 'E', '<Plug>(sexp_move_to_next_element_tail)')
-  endif
+  " if !get(g:, 'sexp_no_word_maps')
+  "   exe s:map('n', 'B', '<Plug>(sexp_move_to_prev_element_head)')
+  "   exe s:map('n', 'W', '<Plug>(sexp_move_to_next_element_head)')
+  "   exe s:map('n', 'gE', '<Plug>(sexp_move_to_prev_element_tail)')
+  "   exe s:map('n', 'E', '<Plug>(sexp_move_to_next_element_tail)')
+  "   exe s:map('x', 'B', '<Plug>(sexp_move_to_prev_element_head)')
+  "   exe s:map('x', 'W', '<Plug>(sexp_move_to_next_element_head)')
+  "   exe s:map('x', 'gE', '<Plug>(sexp_move_to_prev_element_tail)')
+  "   exe s:map('x', 'E', '<Plug>(sexp_move_to_next_element_tail)')
+  "   exe s:map('o', 'B', '<Plug>(sexp_move_to_prev_element_head)')
+  "   exe s:map('o', 'W', '<Plug>(sexp_move_to_next_element_head)')
+  "   exe s:map('o', 'gE', '<Plug>(sexp_move_to_prev_element_tail)')
+  "   exe s:map('o', 'E', '<Plug>(sexp_move_to_next_element_tail)')
+  " endif
 
-  exe s:map('n', '<I', '<Plug>(sexp_insert_at_list_head)')
-  exe s:map('n', '>I', '<Plug>(sexp_insert_at_list_tail)')
-  exe s:map('n', '<f', '<Plug>(sexp_swap_list_backward)')
-  exe s:map('n', '>f', '<Plug>(sexp_swap_list_forward)')
-  exe s:map('n', '<e', '<Plug>(sexp_swap_element_backward)')
-  exe s:map('n', '>e', '<Plug>(sexp_swap_element_forward)')
-  exe s:map('n', '>(', '<Plug>(sexp_emit_head_element)')
-  exe s:map('n', '<)', '<Plug>(sexp_emit_tail_element)')
-  exe s:map('n', '<(', '<Plug>(sexp_capture_prev_element)')
-  exe s:map('n', '>)', '<Plug>(sexp_capture_next_element)')
-  exe s:map('n', '<re', '<Plug>(sexp_raise_element)')
-  exe s:map('n', '<rf', '<Plug>(sexp_raise_list)')
+  " exe s:map('n', '<I', '<Plug>(sexp_insert_at_list_head)')
+  " exe s:map('n', '>I', '<Plug>(sexp_insert_at_list_tail)')
+  " exe s:map('n', '<f', '<Plug>(sexp_swap_list_backward)')
+  " exe s:map('n', '>f', '<Plug>(sexp_swap_list_forward)')
+  " exe s:map('n', '<e', '<Plug>(sexp_swap_element_backward)')
+  " exe s:map('n', '>e', '<Plug>(sexp_swap_element_forward)')
+  " exe s:map('n', '>(', '<Plug>(sexp_emit_head_element)')
+  " exe s:map('n', '<)', '<Plug>(sexp_emit_tail_element)')
+  " exe s:map('n', '<(', '<Plug>(sexp_capture_prev_element)')
+  " exe s:map('n', '>)', '<Plug>(sexp_capture_next_element)')
+  " exe s:map('n', '<re', '<Plug>(sexp_raise_element)')
+  " exe s:map('n', '<rf', '<Plug>(sexp_raise_list)')
 endfunction
 
 function! s:setup() abort
   augroup sexp_mappings_for_regular_people
     autocmd!
-    execute 'autocmd FileType' get(g:, 'sexp_filetypes', 'lisp,scheme,clojure') 'call s:sexp_mappings()'
+    execute 'autocmd FileType' get(g:, 'sexp_filetypes', 'lisp,scheme,clojure,shen') 'call s:sexp_mappings()'
   augroup END
 endfunction
 
